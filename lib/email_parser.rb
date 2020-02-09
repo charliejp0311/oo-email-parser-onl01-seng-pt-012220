@@ -7,13 +7,13 @@ class EmailAddressParser
   attr_accessor :email_addresses
 
   def initialize(csv)
-    @email_addresses = parse(csv)
+    @email_addresses = csv
     #binding.pry
   end
 
-  def parse(f)
+  def parse
     answer = []
-    answer = remove_duplicates(f)
+    answer = remove_duplicates(@email_addresses)
     answer.flatten
     #binding.pry
   end
